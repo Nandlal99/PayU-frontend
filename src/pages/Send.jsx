@@ -29,10 +29,12 @@ const Send = () => {
   };
 
   const handleTransferMoney = () => {
-    console.log("transfer money", amount);
-    sessionStorage.setItem("to", id);
-    sessionStorage.setItem("amount", amount);
-    navigate("/transfer");
+    // console.log("transfer money", amount);
+    if(amount > 0){
+      sessionStorage.setItem("to", id);
+      sessionStorage.setItem("amount", amount);
+      navigate("/transfer");
+    }
   }
 
   return (
@@ -47,7 +49,7 @@ const Send = () => {
         </div>
         <InputField onChange={(e) => {
           setAmount(e.target.value);
-        }} fieldName={"Amount in (Rs)"} fieldType={"text"} fieldPlacehoder={"Enter amount"} />
+        }} fieldName={"Amount in (Rs)"} fieldType={"Number"} fieldPlacehoder={"Enter amount"}  />
         <div className=' my-3 '>
           <button onClick={handleTransferMoney} className={`border-solid border-2 border-green-500 bg-green-500 w-full text-white text-sm px-2 sm:px-5 py-1 rounded-md`}>
             Initiate Transfer

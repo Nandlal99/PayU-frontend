@@ -47,7 +47,7 @@ const Appbar = () => {
         <div className='flex flex-row justify-between w-full p-3 dark:text-white dark:bg-slate-800'>
             <h2>PayU App</h2>
             <div className='flex items-center gap-4'>
-                <h2 className='mx-2'>Hello</h2>
+                <h2 className='mx-2 invisible md:visible'>Namaste</h2>
                 <div className='flex justify-center items-center bg-slate-200 h-8 w-8 rounded-full dark:bg-gray-400 dark:border-white'>
                     <div>{user?.firstName[0]?.toLocaleUpperCase()}</div>
                 </div>
