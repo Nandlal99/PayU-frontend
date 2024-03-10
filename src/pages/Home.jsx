@@ -4,9 +4,10 @@ import { useNavigate } from 'react-router-dom';
 const Home = () => {
   const navigate = useNavigate();
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const token = sessionStorage.getItem("token");
     if(token){
       console.log(token);
+      navigate("/dashboard");
     }else{
       console.log(token);
       navigate("/signin");
